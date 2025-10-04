@@ -1,1 +1,11 @@
-<p>distributor-component works!</p>
+<div class="distriutorContainer">
+  <div class="searchGpContainer">
+    <app-search-component class="searchElement"></app-search-component>
+    <button (click)="onSearch()" class="searchBtn">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+  </div>
+  <div class="tableShell">
+    <app-user-table></app-user-table>
+  </div>
+</div>

@@ -3,7 +3,6 @@ import { RouterOutlet } from '@angular/router';
 
 import { Header1 } from '../../components/header1/header1';
 import { Header2 } from '../../components/header2/header2';
-import { MainArea } from '../../components/main-area/main-area';
 import { Sidebar } from '../../components/sidebar/sidebar';
 
 @Component({

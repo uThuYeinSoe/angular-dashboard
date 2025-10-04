@@ -33,6 +33,10 @@
   --selected-color4: #1ca2d5;
   --selected-color5: #ffc107;
   --selected-color6: #f66b4e;
+  --selected-color3-40: #146329;
+  --selected-color4-40: #116180;
+  --selected-color5-40: #997404;
+  --selected-color6-40: #94402f;
   --selected-bgcolor: #f0eefd;
   --background-bg: #ffffff;
   --text-color1: #171717;
@@ -69,6 +73,7 @@ body {
   height: 100%;
   font-family: 'Roboto';
   margin: 0;
+  width: 100vw;
 }
 img,
 svg {

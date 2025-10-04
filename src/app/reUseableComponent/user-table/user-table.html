@@ -1,0 +1,101 @@
+<div class="tableContainer">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">User Name</th>
+        <th scope="col">User Id</th>
+        <th scope="col">Main Unit</th>
+        <th scope="col">Ticket</th>
+        <th scope="col">Action</th>
+        <th scope="col">Status</th>
+        <th scope="col">Function</th>
+        <th scope="col">Email</th>
+        <th scope="col">Role</th>
+        <th scope="col">Security Code</th>
+        <th scope="col">Last Login Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let r of pageRows()">
+        <th scope="row">{{ r.userName }}</th>
+        <td>
+          <span #userId>{{ r.userId }}</span>
+          <i class="fa-solid fa-copy" (click)="userIdCopy(userId.innerText)"></i>
+        </td>
+        <td>{{ r.mainUnit }}</td>
+        <td>{{ r.ticket }}</td>
+        <td>
+          <button>View Downline</button>
+        </td>
+        <td>
+          <span class="active" *ngIf="r.status === 'Active'; else inact">Active</span>
+          <ng-template #inact><span class="inActive">In-Active</span></ng-template>
+        </td>
+        <td>
+          <button class="btn deposit-btn" (click)="isDepositOpen = true">
+            <i class="fa-solid fa-piggy-bank"></i>
+          </button>
+          <button class="btn withdraw-btn">
+            <i class="fa-solid fa-hand-holding-dollar"></i>
+          </button>
+          <button class="btn password-btn"><i class="fa-solid fa-key"></i></button>
+          <button class="btn banned-btn"><i class="fa-solid fa-user-slash"></i></button>
+        </td>
+        <td>{{ r.email }}</td>
+        <td>{{ r.role }}</td>
+        <td>{{ r.securityCode }}</td>
+        <td>{{ r.lastLogin }}</td>
+      </tr>
+    </tbody>
+    <tfoot></tfoot>
+  </table>
+</div>
+<div class="pager">
+  <div class="left">
+    <label>
+      Rows per page:
+      <select [value]="pageSize()" (change)="setSize(+$any($event.target).value)">
+        <option *ngFor="let s of sizes" [value]="s">{{ s }}</option>
+      </select>
+    </label>
+    <span class="range">
+      {{
+        total() === 0
+          ? '0–0 of 0'
+          : pageIndex() * pageSize() + 1 + '–' + Math.min(total(), (pageIndex() + 1) * pageSize())
+      }}
+      of {{ total() }}
+    </span>
+  </div>
+
+  <div class="right">
+    <button (click)="first()" [disabled]="pageIndex() === 0" aria-label="First">«</button>
+    <button (click)="prev()" [disabled]="pageIndex() === 0" aria-label="Prev">‹</button>
+    <span class="pc">{{ pageIndex() + 1 }} / {{ pageCount() }}</span>
+    <button (click)="next()" [disabled]="pageIndex() >= pageCount() - 1" aria-label="Next">
+      ›
+    </button>
+    <button (click)="last()" [disabled]="pageIndex() >= pageCount() - 1" aria-label="Last">
+      »
+    </button>
+  </div>
+</div>
+
+<app-data-modal [(open)]="isDepositOpen" title="Create Distributor">
+  <!-- body -->
+  <div class="form-grid">
+    <label>
+      Name
+      <input type="text" placeholder="Enter name" />
+    </label>
+    <label>
+      Email
+      <input type="email" placeholder="Enter email" />
+    </label>
+  </div>
+
+  <div modalActions>
+    <button class="btn" (click)="isDepositOpen = false">Cancel</button>
+    <button class="btn primary" (click)="depositOpen()">Save</button>
+  </div>
+</app-data-modal>

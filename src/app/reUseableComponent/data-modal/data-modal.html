@@ -1,0 +1,32 @@
+<!-- Backdrop -->
+<div
+  class="modal-backdrop"
+  *ngIf="open"
+  (click)="onBackdropClick($event)"
+  (keydown)="onKeydown($event)"
+  tabindex="-1"
+>
+  <!-- Dialog -->
+  <div
+    #dialog
+    class="modal"
+    role="dialog"
+    aria-modal="true"
+    [attr.aria-labelledby]="title ? 'modal-title' : null"
+    tabindex="0"
+  >
+    <div class="modal-header">
+      <h3 *ngIf="title" id="modal-title">{{ title }}</h3>
+      <button class="icon-btn" (click)="close()" [attr.aria-label]="'Close dialog'">✕</button>
+    </div>
+
+    <div class="modal-body">
+      <!-- consumer content -->
+      <ng-content></ng-content>
+    </div>
+
+    <div class="modal-footer">
+      <ng-content select="[modalActions]"></ng-content>
+    </div>
+  </div>
+</div>
