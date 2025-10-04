@@ -1,0 +1,51 @@
+.dataCardContainer {
+  width: 100%;
+  height: 9rem;
+  background-color: var(--background-bg);
+  border-radius: 8px;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .showCard {
+    background-color: var(--selected-color1);
+    width: 7rem;
+    height: 7rem;
+    position: absolute;
+    display: grid;
+    place-items: center;
+    top: -10%;
+    left: 5%;
+    img {
+      width: 100%;
+      height: auto;
+      grid-area: 1 / 1;
+    }
+    i {
+      grid-area: 1 / 1;
+      font-size: 3rem;
+      color: var(--selected-bgcolor);
+      z-index: 1;
+    }
+  }
+  .dataContent {
+    padding-left: 28%;
+    .firstConteint {
+      font-size: 1.8rem;
+      font-weight: 500;
+      line-height: 1.2rem;
+      color: var(--font-color-blue);
+      margin-bottom: 1rem;
+    }
+    .secondContent {
+      color: var(--font-color-gray);
+      font-size: 1.4rem;
+    }
+  }
+  .countNum {
+    font-weight: 600;
+    font-size: 3.6rem;
+    padding-right: 8%;
+  }
+}

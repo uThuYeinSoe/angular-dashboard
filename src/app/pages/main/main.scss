@@ -1,0 +1,30 @@
+.mainContainer {
+  width: 100%;
+  height: auto;
+  background-color: var(--selected-bgcolor);
+  display: grid;
+  grid-template-columns: 17% 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    'sidebar header'
+    'sidebar main';
+  height: 100vh;
+  .sidebar {
+    grid-area: sidebar;
+    background: #fff;
+    border-right: 1px solid #ddd;
+  }
+  .header {
+    grid-area: header;
+    background: linear-gradient(90deg, #74239b, #9b23a1);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main {
+    grid-area: main;
+    padding: 1rem;
+    display: grid;
+    gap: 1rem;
+  }
+}

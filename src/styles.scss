@@ -1,0 +1,78 @@
+/* You can add global styles to this file, and also import other style files */
+/*
+  --- 01 Typography System
+  -Font Size(px)
+  10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+  -Font Family
+  Google Font :Roboto
+  -	Clicker Script
+  default : sans-serif
+  -Font Weight
+  default : 400
+  heading-primary : 700
+  -Line Height
+  default : 1
+  heading-primary : 1.1
+  --- 02 Color
+  -Primary : ;
+  -Tints : ,
+  -Shades : ,
+  -Accents
+  -Grays : ;
+  --- 03 Shadow
+  --- 04 Border Radius
+  default : 9px;
+  -Spacing System(px)
+  2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+  */
+:root {
+  --selected-color1: #6b3ea4;
+  --selected-color2: #9451ae;
+  --selected-color3: #21a544;
+  --selected-color4: #1ca2d5;
+  --selected-color5: #ffc107;
+  --selected-color6: #f66b4e;
+  --selected-bgcolor: #f0eefd;
+  --background-bg: #ffffff;
+  --text-color1: #171717;
+  --text-color2: #71717b;
+  --font-color-blue: #031b4e;
+  --font-color-gray: #7987a1;
+  --border-bottom: #dee2e6;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /*Font-size => 10 */
+  font-size: 62.5%;
+  /* scroll-behavior: smooth; */
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: var(--main-text-color);
+  line-height: 1;
+  font-style: normal;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: 'Roboto';
+  margin: 0;
+}
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

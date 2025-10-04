@@ -1,0 +1,52 @@
+.header1Container {
+  width: 100%;
+  height: 6.3rem;
+  color: var(--selected-bgcolor);
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
+  border-bottom: 1px solid var(--border-bottom);
+  .navbarContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    .toggleContainer {
+      display: flex;
+      font-size: 2.4rem;
+      align-items: center;
+      gap: 1.6rem;
+      i {
+        cursor: pointer;
+      }
+      .banlance {
+        background-color: var(--selected-bgcolor);
+        padding: 0.8rem 1.6rem;
+        border-radius: 2rem;
+        color: var(--selected-color1);
+        display: flex;
+        gap: 1.2rem;
+        .balanceLabel {
+        }
+        .amount {
+          font-weight: 600;
+        }
+      }
+    }
+    .rightContainer {
+      display: flex;
+      align-items: center;
+      font-size: 1.8rem;
+      gap: 2.4rem;
+
+      i {
+        cursor: pointer;
+      }
+      img {
+        width: 3.7rem;
+        height: 3.7rem;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+    }
+  }
+}

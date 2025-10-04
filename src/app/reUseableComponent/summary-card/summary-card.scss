@@ -1,0 +1,60 @@
+.summaryCardContainer {
+  width: 100%;
+  height: auto;
+  background-color: var(--background-bg);
+  .titleContainer {
+    width: 100%;
+    padding: 1.2rem 2rem;
+    border-bottom: 1px solid var(--border-bottom);
+    h2 {
+      color: #262833;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+  }
+  .dataContainer {
+    width: 100%;
+    padding: 2rem 4rem;
+    .dataInnerContainer {
+      border-left: 1px solid var(--border-bottom);
+      .rowContainer {
+        display: flex;
+        align-items: center;
+        position: relative;
+        .iconContainer {
+          position: absolute;
+          color: var(--selected-bgcolor);
+          font-size: 1.8rem;
+          background-color: var(--selected-color1);
+          width: 4rem;
+          height: 4rem;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          left: -5%;
+        }
+        .dataContainer {
+          .content1 {
+            font-size: 1.6rem;
+            font-weight: 500;
+            line-height: 1.2rem;
+            color: var(--font-color-blue);
+            margin-bottom: 0.8rem;
+          }
+          .content2 {
+            color: var(--font-color-gray);
+            font-size: 1.4rem;
+            font-weight: 400;
+            line-height: 1.5rem;
+          }
+        }
+        .countContainer {
+          font-size: 2.1rem;
+          color: var(--selected-color1);
+        }
+      }
+    }
+  }
+}

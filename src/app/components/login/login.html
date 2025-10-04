@@ -1,0 +1,16 @@
+<div class="loginComponents">
+  <div class="loginContainer">
+    <h2 class="loginTitle">Game Bank</h2>
+    <div class="loginInnerContainer">
+      <h3 class="firstTitle">Welcome Back!</h3>
+      <h3 class="secondTitle">Please sign in to continue</h3>
+      <div class="inputCustomContainer">
+        <app-input-container [label]="emailLabel" [type]="emailType"> </app-input-container>
+      </div>
+      <div class="inputCustomContainer">
+        <app-input-container [label]="passwordLable" [type]="passwordType"> </app-input-container>
+      </div>
+      <button (click)="onLogin()">Log In</button>
+    </div>
+  </div>
+</div>
