@@ -1,4 +1,4 @@
-.summaryCardContainer {
+.userSummaryCardContainer {
   width: 100%;
   height: auto;
   background-color: var(--background-bg);
@@ -14,12 +14,9 @@
   }
   .dataContainer {
     width: 100%;
-    padding: 2rem 4rem;
-    .dataInnerContainer {
-      border-left: 1px solid var(--border-bottom);
-      display: flex;
-      flex-direction: column;
-      gap: 2.4rem;
-    }
+    padding: 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
   }
 }

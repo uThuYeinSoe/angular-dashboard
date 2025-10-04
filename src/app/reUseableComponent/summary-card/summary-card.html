@@ -1,21 +1,40 @@
 <div class="summaryCardContainer">
   <div class="titleContainer">
-    <h2>Title</h2>
+    <h2>{{ containerTitle }}</h2>
   </div>
   <div class="dataContainer">
     <div class="dataInnerContainer">
-      <div class="rowContainer">
-        <div class="iconContainer">
-          <i class="fa-solid fa-trophy"></i>
-        </div>
-        <div class="dataContainer">
-          <p class="content1">Total Bet</p>
-          <p class="content2">daily Profit</p>
-        </div>
-        <div class="countContainer">
-          <p>1000000</p>
-        </div>
-      </div>
+      <app-row-container-in-summary
+        [iconLink]="todayBetIconLink"
+        [firstContentValue]="todayBetFirstValue"
+        [secondContentValue]="todayBetSecondValue"
+        [countValue]="todayCountValue"
+        [iconBgColor]="todayBetIconBgColor"
+      ></app-row-container-in-summary>
+
+      <app-row-container-in-summary
+        [iconLink]="todayBetWinIconLink"
+        [firstContentValue]="todayBetWinFirstValue"
+        [secondContentValue]="todayBetWinSecondValue"
+        [countValue]="todayCountWinValue"
+        [iconBgColor]="todayBetWinIconBgColor"
+      ></app-row-container-in-summary>
+
+      <app-row-container-in-summary
+        [iconLink]="todayDepositIconLink"
+        [firstContentValue]="todayDepositFirstValue"
+        [secondContentValue]="todayDepositSecondValue"
+        [countValue]="todayDepositValue"
+        [iconBgColor]="todayDepositIconBgColor"
+      ></app-row-container-in-summary>
+
+      <app-row-container-in-summary
+        [iconLink]="todayWithdrawIconLink"
+        [firstContentValue]="todayWithdrawFirstValue"
+        [secondContentValue]="todayDepositSecondValue"
+        [countValue]="todayWithdrawValue"
+        [iconBgColor]="todayWithdrawIconBgColor"
+      ></app-row-container-in-summary>
     </div>
   </div>
 </div>

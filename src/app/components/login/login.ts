@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { InputContainer } from '../../reUseableComponent/input-container/input-container';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,5 +16,9 @@ export class Login {
   passwordLable = 'Password';
   passwordType = 'password';
 
-  onLogin() {}
+  constructor(private router: Router) {}
+
+  onLogin() {
+    this.router.navigate(['/main', 'dashboard']);
+  }
 }

@@ -2,15 +2,15 @@ import { Component, Input } from '@angular/core';
 import { NgClass } from '@angular/common';
 
 @Component({
-  selector: 'app-row-container-in-summary',
+  selector: 'app-user-summary-row',
   imports: [NgClass],
   standalone: true,
-  templateUrl: './row-container-in-summary.html',
-  styleUrl: './row-container-in-summary.scss',
+  templateUrl: './user-summary-row.html',
+  styleUrl: './user-summary-row.scss',
   host: { '[style.--selected-color1]': 'iconBgColor' },
 })
-export class RowContainerInSummary {
-  @Input() iconLink = '';
+export class UserSummaryRow {
+  @Input() iconLink = 'fa-solid fa-user-tie';
   @Input() firstContentValue = '';
   @Input() secondContentValue = '';
   @Input() countValue = '';
