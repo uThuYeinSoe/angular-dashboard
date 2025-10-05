@@ -7,20 +7,37 @@
   .searchGpContainer {
     display: flex;
     width: 100%;
-    .searchElement {
-      width: 100%;
+    .leftSite {
+      width: 70%;
+      display: flex;
+      .searchElement {
+        width: 100%;
+      }
+      .searchBtn {
+        width: 5%;
+        border: none;
+        outline: none;
+        background-color: var(--selected-color2);
+        cursor: pointer;
+        color: var(--selected-bgcolor);
+        height: 3.5rem;
+        &:focus,
+        &:hover {
+          background-color: var(--selected-color1);
+        }
+      }
     }
-    .searchBtn {
-      width: 5%;
-      border: none;
-      outline: none;
-      background-color: var(--selected-color2);
-      cursor: pointer;
-      color: var(--selected-bgcolor);
-      height: 3.5rem;
-      &:focus,
-      &:hover {
-        background-color: var(--selected-color1);
+    .rightSite {
+      display: flex;
+      justify-content: flex-end;
+      width: 30%;
+      gap: 1rem;
+      i {
+        font-size: 3rem;
+        color: var(--selected-color1);
+      }
+      .btnContainer {
+        width: 40%;
       }
     }
   }

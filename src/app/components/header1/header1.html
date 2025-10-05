@@ -13,8 +13,35 @@
       <i class="fa-solid fa-expand"></i>
       <i class="fa-regular fa-bell"></i>
       <i class="fa-regular fa-envelope"></i>
-      <img src="assets/images/profile.jpg" alt="" />
+      <img
+        [src]="profileUrl"
+        alt="Profile Image"
+        cdkOverlayOrigin
+        #imgOrigin="cdkOverlayOrigin"
+        (click)="isProfileOpen = !isProfileOpen"
+      />
       <i class="fa-solid fa-gear"></i>
     </div>
   </div>
 </div>
+
+<app-profile-modal [(open)]="isProfileOpen" [origin]="imgOrigin" [title]="profileTitle">
+  <ul class="profileSettingContainer">
+    <li>
+      <i class="fa-solid fa-user"></i>
+      <span>Profile</span>
+    </li>
+    <li>
+      <i class="fa-solid fa-clock"></i>
+      <span>Activity Log</span>
+    </li>
+    <li>
+      <i class="fa-solid fa-gear"></i>
+      <span>Account Setting</span>
+    </li>
+    <li>
+      <i class="fa-regular fa-arrow-right-from-bracket"></i>
+      <span>Sign Out</span>
+    </li>
+  </ul>
+</app-profile-modal>

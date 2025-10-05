@@ -35,11 +35,15 @@
           <button class="btn deposit-btn" (click)="isDepositOpen = true">
             <i class="fa-solid fa-piggy-bank"></i>
           </button>
-          <button class="btn withdraw-btn">
+          <button class="btn withdraw-btn" (click)="isWithdrawOpen = true">
             <i class="fa-solid fa-hand-holding-dollar"></i>
           </button>
-          <button class="btn password-btn"><i class="fa-solid fa-key"></i></button>
-          <button class="btn banned-btn"><i class="fa-solid fa-user-slash"></i></button>
+          <button class="btn password-btn" (click)="isChangePasswordOpen = true">
+            <i class="fa-solid fa-key"></i>
+          </button>
+          <button class="btn banned-btn" (click)="isBannedUserOpen = true">
+            <i class="fa-solid fa-user-slash"></i>
+          </button>
         </td>
         <td>{{ r.email }}</td>
         <td>{{ r.role }}</td>
@@ -81,21 +85,141 @@
   </div>
 </div>
 
-<app-data-modal [(open)]="isDepositOpen" title="Create Distributor">
+<!-- Deposit Modal Start -->
+<app-data-modal [(open)]="isDepositOpen" title="Deposit">
   <!-- body -->
   <div class="form-grid">
-    <label>
-      Name
-      <input type="text" placeholder="Enter name" />
-    </label>
-    <label>
-      Email
-      <input type="email" placeholder="Enter email" />
-    </label>
+    <div class="inputGp">
+      <label> Amount </label>
+      <div class="inputContainer">
+        <app-input-only
+          [inputType]="depositAmtType"
+          [inputPlaceHolder]="depositPlaceHolder"
+          [inputValue]="depositValue"
+        ></app-input-only>
+      </div>
+    </div>
+    <div class="inputGp">
+      <label> Description </label>
+      <div class="inputContainer">
+        <app-input-only
+          [inputType]="depositDescType"
+          [inputPlaceHolder]="depositDescPlaceHolder"
+          [inputValue]="depositDescValue"
+        ></app-input-only>
+      </div>
+    </div>
   </div>
 
-  <div modalActions>
-    <button class="btn" (click)="isDepositOpen = false">Cancel</button>
-    <button class="btn primary" (click)="depositOpen()">Save</button>
+  <div modalActions class="btnGp">
+    <app-button-component
+      [action]="depositConfirmAction"
+      [btnName]="depositConfirm"
+      [type]="'primary'"
+    ></app-button-component>
+    <app-button-component
+      [action]="depositCancleAction"
+      (click)="isDepositOpen = false"
+      [btnName]="depositCancle"
+      [type]="'secondary'"
+    ></app-button-component>
   </div>
 </app-data-modal>
+<!-- Deposit Modal End -->
+
+<!-- Withdraw Modal Start -->
+<app-data-modal [(open)]="isWithdrawOpen" title="Withdraw">
+  <!-- body -->
+  <div class="form-grid">
+    <div class="inputGp">
+      <label> Amount </label>
+      <div class="inputContainer">
+        <app-input-only
+          [inputType]="withdrawAmtType"
+          [inputPlaceHolder]="withdrawPlaceHolder"
+          [inputValue]="withdrawValue"
+        ></app-input-only>
+      </div>
+    </div>
+    <div class="inputGp">
+      <label> Description </label>
+      <div class="inputContainer">
+        <app-input-only
+          [inputType]="withdrawDescType"
+          [inputPlaceHolder]="withdrawDescPlaceHolder"
+          [inputValue]="withdrawDescValue"
+        ></app-input-only>
+      </div>
+    </div>
+  </div>
+
+  <div modalActions class="btnGp">
+    <app-button-component
+      [action]="withdrawConfirmAction"
+      [btnName]="withdrawConfirm"
+      [type]="'primary'"
+    ></app-button-component>
+    <app-button-component
+      [action]="withdrawCancleAction"
+      (click)="isWithdrawOpen = false"
+      [btnName]="withdrawCancle"
+      [type]="'secondary'"
+    ></app-button-component>
+  </div>
+</app-data-modal>
+<!-- Withdraw Modal End -->
+
+<!-- Change Password Modal Start -->
+<app-data-modal [(open)]="isChangePasswordOpen" title="Change Password">
+  <!-- body -->
+  <div class="form-grid">
+    <div class="inputGp">
+      <label> New Password </label>
+      <div class="inputContainer">
+        <app-input-only
+          [inputType]="changePasswordInputType"
+          [inputPlaceHolder]="changePasswordPlaceHolder"
+          [inputValue]="newPasswordVal"
+        ></app-input-only>
+      </div>
+    </div>
+  </div>
+
+  <div modalActions class="btnGp">
+    <app-button-component
+      [action]="changePasswordConfirmAction"
+      [btnName]="changePasswordConfirm"
+      [type]="'success'"
+    ></app-button-component>
+    <app-button-component
+      [action]="changePasswordCancleAction"
+      (click)="isChangePasswordOpen = false"
+      [btnName]="changePasswordCancle"
+      [type]="'secondary'"
+    ></app-button-component>
+  </div>
+</app-data-modal>
+<!-- Change Password Modal End -->
+
+<!-- Banned User Modal Start -->
+<app-data-modal [(open)]="isBannedUserOpen" title="Banned User">
+  <!-- body -->
+  <div class="form-grid">
+    <p>{{ bannedUserNoticText }}</p>
+  </div>
+
+  <div modalActions class="btnGp">
+    <app-button-component
+      [action]="bannedUserConfirmAction"
+      [btnName]="bannedUserConfirm"
+      [type]="'success'"
+    ></app-button-component>
+    <app-button-component
+      [action]="bannedUserCancleAction"
+      (click)="isBannedUserOpen = false"
+      [btnName]="bannedUserCancle"
+      [type]="'secondary'"
+    ></app-button-component>
+  </div>
+</app-data-modal>
+<!-- Banned User Modal End -->

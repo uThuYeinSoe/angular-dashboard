@@ -1,9 +1,21 @@
 <div class="distriutorContainer">
   <div class="searchGpContainer">
-    <app-search-component class="searchElement"></app-search-component>
-    <button (click)="onSearch()" class="searchBtn">
-      <i class="fa-solid fa-magnifying-glass"></i>
-    </button>
+    <div class="leftSite">
+      <app-search-component class="searchElement"></app-search-component>
+      <button (click)="onSearch()" class="searchBtn">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </div>
+    <div class="rightSite">
+      <i class="fa-solid fa-user-plus"></i>
+      <div class="btnContainer">
+        <app-button-component
+          [action]="createUserAcition"
+          [btnName]="createUserBtnLabel"
+          [type]="'primary'"
+        ></app-button-component>
+      </div>
+    </div>
   </div>
   <div class="tableShell">
     <app-user-table></app-user-table>

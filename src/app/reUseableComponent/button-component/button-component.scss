@@ -1,0 +1,84 @@
+.btnContainer {
+  width: 100%;
+  height: auto;
+  .btn-primary {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 0.8rem 1.6rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    background-color: var(--selected-color2);
+    color: var(--selected-bgcolor);
+    transition: all 0.3s linear;
+    &:hover,
+    &:focus {
+      background-color: var(--selected-color1);
+    }
+  }
+  .btn-secondary {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 0.8rem 1.6rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    background-color: var(--selected-color6);
+    color: var(--selected-bgcolor);
+    transition: all 0.3s linear;
+    &:hover,
+    &:focus {
+      background-color: var(--selected-color6-40);
+    }
+  }
+  .btn-danger {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 0.8rem 1.6rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    background-color: var(--selected-color7);
+    color: var(--selected-bgcolor);
+    transition: all 0.3s linear;
+    &:hover,
+    &:focus {
+      background-color: var(--selected-color7-40);
+    }
+  }
+  .btn-success {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 0.8rem 1.6rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    background-color: var(--selected-color3);
+    color: var(--selected-bgcolor);
+    transition: all 0.3s linear;
+    &:hover,
+    &:focus {
+      background-color: var(--selected-color3-40);
+    }
+  }
+  .btn-warning {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 0.8rem 1.6rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    background-color: var(--selected-color5);
+    color: var(--selected-bgcolor);
+    transition: all 0.3s linear;
+    &:hover,
+    &:focus {
+      background-color: var(--selected-color5-40);
+    }
+  }
+}

@@ -203,3 +203,25 @@
     }
   }
 }
+
+.form-grid {
+  .inputGp {
+    display: flex;
+    align-items: center;
+    label {
+      font-size: 1.4rem;
+      width: 20%;
+    }
+    .inputContainer {
+      width: 80%;
+    }
+  }
+  p {
+    font-size: 1.4rem;
+    color: var(--text-color1);
+  }
+}
+.btnGp {
+  display: flex;
+  gap: 1.4rem;
+}

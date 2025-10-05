@@ -1,0 +1,20 @@
+<ng-template
+  cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]="origin"
+  [cdkConnectedOverlayOpen]="open"
+  [cdkConnectedOverlayHasBackdrop]="true"
+  [cdkConnectedOverlayBackdropClass]="'cdk-overlay-transparent-backdrop'"
+  [cdkConnectedOverlayPositions]="positions"
+  (backdropClick)="close()"
+  (overlayOutsideClick)="close()"
+  (detach)="close()"
+>
+  <div class="popover" tabindex="0" (keydown.escape)="close()">
+    <div class="header">
+      <h5>{{ title }}</h5>
+    </div>
+    <div class="body">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</ng-template>
